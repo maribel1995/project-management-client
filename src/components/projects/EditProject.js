@@ -19,7 +19,7 @@ class EditProject extends Component {
 
     event.preventDefault();
 
-    axios.put(`http://localhost:5000/api/projects/${this.props.theProject._id}`, { title, description })
+    axios.put(`${process.env.REACT_APP_API_URL}/api/projects/${this.props.theProject._id}`, { title, description })
     .then(() => {
         this.props.getTheProject();
         // after submitting the form, redirect to '/projects'

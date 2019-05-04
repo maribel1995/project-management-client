@@ -22,7 +22,7 @@ class ProjectDetails extends Component {
 
   getSingleProject = () => {
     const { params } = this.props.match;
-    axios.get(`http://localhost:5000/api/projects/${params.id}`)
+    axios.get(`${process.env.REACT_APP_API_URL}/api/projects/${params.id}`)
     .then(responseFromApi => {
         const theProject = responseFromApi.data;
         this.setState(theProject);

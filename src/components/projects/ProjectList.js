@@ -12,7 +12,7 @@ class ProjectList extends Component {
   }
 
   getAllProjects = () =>{
-    axios.get(`http://localhost:5000/api/projects`)
+    axios.get(`${process.env.REACT_APP_API_URL}/api/projects`)
     .then(responseFromApi => {
       console.log(responseFromApi)
       this.setState({
